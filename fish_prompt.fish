@@ -307,41 +307,44 @@ function _python_version -d "Get python version if pyenv is installed"
 end
 
 function _icons_initialize
-  #echo \Uf00a \ue709 \ue791 \ue739 \uF0DD \UF020 \UF01F \UF07B \UF015 \UF00C \UF00B \UF06B \UF06C \UF06E \UF091 \UF02C \UF026 \UF06D \UF0CF \UF03A \UF03D \UF081 \UF02A \UE606 \UE73C      #\UF005 bugs in fish
+  # Setting everything up for nerd-fonts glyphs
+  #echo \uf00a \ue709 \ue791 \ue739 \uF0DD \uF020 \uF01F \uF07B \uF015 \uF00C \uF00B \uF06B \uF06C \uF06E \uF091 \uF02C \uF026 \uF06D \uF0CF \uF03A \uF03D \uF081 \uF02A \uE606 \uE73C      #\uF005 bugs in fish
   set -g ORANGE                     FF8C00        #FF8C00 dark orange, FFA500 orange, another one fa0 o
-  set -g ICON_NODE                  \UE718" "     #  from Devicons or ⬢
-  set -g ICON_RUBY                  \UE791" "     # \UE791 from Devicons; \UF047; \UE739; 💎
-  set -g ICON_PYTHON                \UE606" "     # \UE606; \UE73C
-  #set -g ICON_PERL                  \UE606" "     # \UE606; \UE73C
-  set -g ICON_TEST                  \UF091        # 
-  set -g ICON_VCS_UNTRACKED         \UF02C" "     #    #●: there are untracked (new) files
-  set -g ICON_VCS_UNMERGED          \UF026" "     #    #═: there are unmerged commits
-  set -g ICON_VCS_MODIFIED          \UF06D" "     # 
-  set -g ICON_VCS_STAGED            \UF06B" "     #  (added) →
-  set -g ICON_VCS_DELETED           \UF06C" "     # 
-  set -g ICON_VCS_DIFF              \UF06B" "     # 
-  set -g ICON_VCS_RENAME            \UF06E" "     # 
-  set -g ICON_VCS_STASH             \UF0CF" "     #      #✭: there are stashed commits
-  set -g ICON_VCS_INCOMING_CHANGES  \UF00B" "     #  or \UE1EB or \UE131
-  set -g ICON_VCS_OUTGOING_CHANGES  \UF00C" "     #  or \UE1EC or 
-  set -g ICON_VCS_TAG               \UF015" "     # 
-  set -g ICON_VCS_BOOKMARK          \UF07B" "     # 
-  set -g ICON_VCS_COMMIT            \UF01F" "     # 
-  set -g ICON_VCS_BRANCH            \UE0A0        # \UE0A0 or \UF020
-  set -g ICON_VCS_REMOTE_BRANCH     \UE804" "     #  not displayed, should be branch icon on a book
-  set -g ICON_VCS_DETACHED_BRANCH   \U27A6" "     # ➦
-  set -g ICON_VCS_GIT               \UF00A" "     #  from Octicons
+  set -g ICON_NODE                  \uE718" "     #  from Devicons or ⬢
+  set -g ICON_RUBY                  \uE791" "     # \uE791 from Devicons; \uF047; \uE739; 💎
+  set -g ICON_PYTHON                \uE73C" "     # \uE606; \uE73C
+  #set -g ICON_PERL                  \uE606" "     # \uE606; \uE73C
+  set -g ICON_TEST                  \uF091        # 
+
+  set -g ICON_VCS_UNTRACKED         \uF4A4" "     # …   #●: there are untracked (new) files
+  set -g ICON_VCS_UNMERGED          \uF026" "     #    #═: there are unmerged commits <-- TODO
+  set -g ICON_VCS_MODIFIED          \uF459" "     #  <-- TODO
+  set -g ICON_VCS_STAGED            \uF06B" "     # ~  (added) → <-- TODO
+  set -g ICON_VCS_DELETED           \uF458" "     # 
+  set -g ICON_VCS_DIFF              \uF440" "     # 
+  set -g ICON_VCS_RENAME            \uF45A" "     # 
+  set -g ICON_VCS_STASH             \uF155" "     # $     #✭: there are stashed commits
+  set -g ICON_VCS_INCOMING_CHANGES  \uF00B" "     #  or \uE1EB or \uE131
+  set -g ICON_VCS_OUTGOING_CHANGES  \uF00C" "     #  or \uE1EC or 
+  set -g ICON_VCS_TAG               \uF02B" "     # 
+  set -g ICON_VCS_BOOKMARK          \uF461" "     # 
+  set -g ICON_VCS_COMMIT            \uE729" "     # 
+  set -g ICON_VCS_BRANCH            \uF418        # \uE0A0 or \uF020
+  set -g ICON_VCS_REMOTE_BRANCH     \uE804" "     #  not displayed, should be branch icon on a book
+  set -g ICON_VCS_DETACHED_BRANCH   \u27A6" "     # ➦
+  set -g ICON_VCS_GIT               \uF1D2" "     #  from nerd-fonts
   set -g ICON_VCS_HG                \F0DD" "      # Got cut off from Octicons on patching
-  set -g ICON_VCS_CLEAN             \UF03A        # 
-  set -g ICON_VCS_PUSH              printf "\UF005 " # bugs out in fish: \UF005 (printf "\UF005")
+  set -g ICON_VCS_CLEAN             \uF03A        # 
+  set -g ICON_VCS_PUSH              printf "\uF005 " # bugs out in fish: \uF005 (printf "\uF005")
   set -g ICON_VCS_DIRTY             ±             #
-  set -g ICON_ARROW_UP              \UF03D""      #  ↑
-  set -g ICON_ARROW_DOWN            \UF03F""      #  ↓
-  set -g ICON_OK                    \UF03A        # 
-  set -g ICON_FAIL                  \UF081        # 
-  set -g ICON_STAR                  \UF02A        # 
-  set -g ICON_JOBS                  \U2699" "     # ⚙
-  set -g ICON_VIM                   \UE7C5" "     # 
+
+  set -g ICON_ARROW_UP              \uF03D""      #  ↑
+  set -g ICON_ARROW_DOWN            \uF03F""      #  ↓
+  set -g ICON_OK                    \uF03A        # 
+  set -g ICON_FAIL                  \uF081        # 
+  set -g ICON_STAR                  \uF02A        # 
+  set -g ICON_JOBS                  \u2699" "     # ⚙
+  set -g ICON_VIM                   \uE7C5" "     # 
 end
 
 set -g CMD_DURATION 0
