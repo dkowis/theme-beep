@@ -220,7 +220,7 @@ function _git_branch -d "Display the current git state"
       set ref " $ICON_VCS_DETACHED_BRANCH$branch"
     end
     set -l branch (echo $ref | sed  "s-refs/heads/--")
-    echo " $ICON_VCS_BRANCH"(_col magenta)"$branch"(_col_res)
+    echo " $ICON_VCS_BRANCH"(_col magenta)"[$branch] "(_col_res)
   end
 end
 function _is_git_folder     -d "Check if current folder is a git folder"
@@ -263,7 +263,9 @@ end
 
 function _node_version -d "Get the currently used node version if NVM exists"
   set -l node_version
-  available nvm; and set node_version (string trim -l -c=v (node -v 2>/dev/null)) # trimmed lef 'v'; can use 'nvm current', but slower
+  type -q nvm; and set -l node_version (string trim -l -c=v (node -v 2>/dev/null)) # trimmed lef 'v'; can use 'nvm current', but slower
+  # Note, if you have both (why would you have both?) nodenv overrides
+  type -q nodenv; and set -l node_version (string trim --left --chars=v (nodenv version-name) ) # also trims left v, nodenv version-name is hella fast
   test $node_version; and echo -n -s (_col brgreen)$ICON_NODE(_col green)$node_version(_col_res)
 end
 
@@ -284,7 +286,7 @@ function _ruby_version -d "Get RVM or rbenv version and output" #^&1 stderr2stdo
 end
 
 function _rbenv_gemset -d "Get main current gemset name"
-  if available rbenv
+  if type -q rbenv
     if test (rbenv gemset active 2>/dev/null)                           #redirects stderr to /null
       set -l active_gemset (string split -m1 " " (rbenv gemset active))
       echo -n -s $active_gemset[1]
