@@ -43,7 +43,8 @@ function fish_right_prompt
     set NODEp   (_node_version)                                      #Node.js version
     set PYTHONp (_python_version)                                    #Python version
     set RUBYp   (_ruby_version)                                      #Ruby prompt @ gemset
-    echo -n -s "$git_sha$NODEp$PYTHONp$RUBYp"                        # -n no newline -s no space separation
+    set JVMp    (_jvm_version)                                       #Java version
+    echo -n -s "$git_sha$JVMp$NODEp$PYTHONp$RUBYp"                   # -n no newline -s no space separation
   end
   echo -n -s (_prompt_user)                                          #display user@host if different from default or SSH
 end
@@ -269,6 +270,12 @@ function _node_version -d "Get the currently used node version if NVM exists"
   test $node_version; and echo -n -s (_col brgreen)$ICON_NODE(_col green)$node_version(_col_res)
 end
 
+function _jenv_version -d "Get the current java version if jenv exists"
+  set -l jvm_version
+  type -q jenv; and set -l jenv_version (jenv version-name)
+  test $jvm_version; and echo -n -s (_col brgreen)$ICON_JVM(_col green)$jvm_version(_col_res)
+end
+
 function _ruby_version -d "Get RVM or rbenv version and output" #^&1 stderr2stdout, >&2 vice versa, '>' stdout, '2>' stderr
   set -l ruby_ver
   if which rvm-prompt >/dev/null ^&1
@@ -308,11 +315,11 @@ end
 
 function _icons_initialize
   # Setting everything up for nerd-fonts glyphs
-  #echo \uf00a \ue709 \ue791 \ue739 \uF0DD \uF020 \uF01F \uF07B \uF015 \uF00C \uF00B \uF06B \uF06C \uF06E \uF091 \uF02C \uF026 \uF06D \uF0CF \uF03A \uF03D \uF081 \uF02A \uE606 \uE73C      #\uF005 bugs in fish
   set -g ORANGE                     FF8C00        #FF8C00 dark orange, FFA500 orange, another one fa0 o
   set -g ICON_NODE                  \uE718    #  from Devicons or ⬢
   set -g ICON_RUBY                  \uE791    # \uE791 from Devicons; \uF047; \uE739; 💎
   set -g ICON_PYTHON                \uE73C    # \uE606; \uE73C
+  set -g ICON_JVM                   \uE738    #  <-- java!
   #set -g ICON_PERL                  \uE606" "     # \uE606; \uE73C
   set -g ICON_TEST                  \uF091        # 
 
