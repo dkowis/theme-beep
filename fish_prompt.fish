@@ -272,7 +272,7 @@ end
 
 function _jvm_version -d "Get the current java version if jenv exists"
   set -l jvm_version
-  type -q jenv; and set -l jenv_version (jenv version-name)
+  type -q jenv; and set -l jvm_version (jenv version-name)
   test $jvm_version; and echo -n -s (_col brgreen)$ICON_JVM(_col green)$jvm_version(_col_res)
 end
 
