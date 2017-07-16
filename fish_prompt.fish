@@ -220,7 +220,7 @@ function _git_branch -d "Display the current git state"
       set ref " $ICON_VCS_DETACHED_BRANCH$branch"
     end
     set -l branch (echo $ref | sed  "s-refs/heads/--")
-    echo " $ICON_VCS_BRANCH"(_col magenta)"[$branch] "(_col_res)
+    echo " $ICON_VCS_BRANCH"(_col magenta)"$branch"(_col_res)
   end
 end
 function _is_git_folder     -d "Check if current folder is a git folder"
