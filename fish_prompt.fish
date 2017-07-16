@@ -314,31 +314,36 @@ function _python_version -d "Get python version if pyenv is installed"
 end
 
 function _icons_initialize
+  # Turns out iTerm in OSX needs an extra space, becasue I don't know why :(
+  set -l OSX
+  if [ (uname) = "Darwin" ]
+    set -l OSX " "
+  end
   # Setting everything up for nerd-fonts glyphs
   set -g ORANGE                     FF8C00        #FF8C00 dark orange, FFA500 orange, another one fa0 o
-  set -g ICON_NODE                  \uE718    #  from Devicons or ⬢
-  set -g ICON_RUBY                  \uE791    # \uE791 from Devicons; \uF047; \uE739; 💎
-  set -g ICON_PYTHON                \uE73C    # \uE606; \uE73C
-  set -g ICON_JVM                   \uE738    #  <-- java!
+  set -g ICON_NODE                  \uE718$OSX    #  from Devicons or ⬢
+  set -g ICON_RUBY                  \uE791$OSX    # \uE791 from Devicons; \uF047; \uE739; 💎
+  set -g ICON_PYTHON                \uE73C$OSX    # \uE606; \uE73C
+  set -g ICON_JVM                   \uE738$OSX    #  <-- java!
   #set -g ICON_PERL                  \uE606" "     # \uE606; \uE73C
   set -g ICON_TEST                  \uF091        # 
 
-  set -g ICON_VCS_UNTRACKED         \uF4A4     # …   #●: there are untracked (new) files
-  set -g ICON_VCS_UNMERGED          \uF026     #    #═: there are unmerged commits <-- TODO
-  set -g ICON_VCS_MODIFIED          \uF459     #  <-- TODO
-  set -g ICON_VCS_STAGED            \uF457     # ~  (added) → <-- TODO
-  set -g ICON_VCS_DELETED           \uF458     # 
-  set -g ICON_VCS_DIFF              \uF440     # 
-  set -g ICON_VCS_RENAME            \uF45A     # 
-  set -g ICON_VCS_STASH             \uF155     # $     #✭: there are stashed commits
+  set -g ICON_VCS_UNTRACKED         \uF4A4$OSX     # …   #●: there are untracked (new) files
+  set -g ICON_VCS_UNMERGED          \uF026$OSX     #    #═: there are unmerged commits <-- TODO
+  set -g ICON_VCS_MODIFIED          \uF459$OSX     #  <-- TODO
+  set -g ICON_VCS_STAGED            \uF457$OSX     # ~  (added) → <-- TODO
+  set -g ICON_VCS_DELETED           \uF458$OSX     # 
+  set -g ICON_VCS_DIFF              \uF440$OSX     # 
+  set -g ICON_VCS_RENAME            \uF45A$OSX     # 
+  set -g ICON_VCS_STASH             \uF155$OSX     # $     #✭: there are stashed commits
   set -g ICON_VCS_INCOMING_CHANGES  \uF00B" "     #  or \uE1EB or \uE131
   set -g ICON_VCS_OUTGOING_CHANGES  \uF00C" "     #  or \uE1EC or 
-  set -g ICON_VCS_TAG               \uF02B     # 
-  set -g ICON_VCS_BOOKMARK          \uF461     # 
-  set -g ICON_VCS_COMMIT            \uE729     # 
-  set -g ICON_VCS_BRANCH            \uF418        # \uE0A0 or \uF020
+  set -g ICON_VCS_TAG               \uF02B$OSX     # 
+  set -g ICON_VCS_BOOKMARK          \uF461$OSX     # 
+  set -g ICON_VCS_COMMIT            \uE729$OSX     # 
+  set -g ICON_VCS_BRANCH            \uF418$OSX        # \uE0A0 or \uF020
   set -g ICON_VCS_REMOTE_BRANCH     \uE804     #  not displayed, should be branch icon on a book
-  set -g ICON_VCS_DETACHED_BRANCH   \u27A6     # ➦
+  set -g ICON_VCS_DETACHED_BRANCH   \u27A6$OSX     # ➦
   set -g ICON_VCS_GIT               \uF1D2     #  from nerd-fonts
   set -g ICON_VCS_HG                \uF0DD      # Got cut off from Octicons on patching
   set -g ICON_VCS_CLEAN             \uF03A        # 
@@ -350,8 +355,8 @@ function _icons_initialize
   set -g ICON_OK                    \uF046        # 
   set -g ICON_FAIL                  \uF2D4        # 
   set -g ICON_STAR                  \uF005        # 
-  set -g ICON_JOBS                  \uF085" "     # ⚙
-  set -g ICON_VIM                   \uE7C5" "     # 
+  set -g ICON_JOBS                  \uF085$OSX     # ⚙
+  set -g ICON_VIM                   \uE7C5$OSX     # 
 end
 
 set -g CMD_DURATION 0
