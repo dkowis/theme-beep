@@ -316,26 +316,26 @@ function _icons_initialize
   #set -g ICON_PERL                  \uE606" "     # \uE606; \uE73C
   set -g ICON_TEST                  \uF091        # 
 
-  set -g ICON_VCS_UNTRACKED         \uF4A4" "     # …   #●: there are untracked (new) files
-  set -g ICON_VCS_UNMERGED          \uF026" "     #    #═: there are unmerged commits <-- TODO
-  set -g ICON_VCS_MODIFIED          \uF459" "     #  <-- TODO
-  set -g ICON_VCS_STAGED            \uF457" "     # ~  (added) → <-- TODO
-  set -g ICON_VCS_DELETED           \uF458" "     # 
-  set -g ICON_VCS_DIFF              \uF440" "     # 
-  set -g ICON_VCS_RENAME            \uF45A" "     # 
-  set -g ICON_VCS_STASH             \uF155" "     # $     #✭: there are stashed commits
+  set -g ICON_VCS_UNTRACKED         \uF4A4     # …   #●: there are untracked (new) files
+  set -g ICON_VCS_UNMERGED          \uF026     #    #═: there are unmerged commits <-- TODO
+  set -g ICON_VCS_MODIFIED          \uF459     #  <-- TODO
+  set -g ICON_VCS_STAGED            \uF457     # ~  (added) → <-- TODO
+  set -g ICON_VCS_DELETED           \uF458     # 
+  set -g ICON_VCS_DIFF              \uF440     # 
+  set -g ICON_VCS_RENAME            \uF45A     # 
+  set -g ICON_VCS_STASH             \uF155     # $     #✭: there are stashed commits
   set -g ICON_VCS_INCOMING_CHANGES  \uF00B" "     #  or \uE1EB or \uE131
   set -g ICON_VCS_OUTGOING_CHANGES  \uF00C" "     #  or \uE1EC or 
-  set -g ICON_VCS_TAG               \uF02B" "     # 
-  set -g ICON_VCS_BOOKMARK          \uF461" "     # 
-  set -g ICON_VCS_COMMIT            \uE729" "     # 
+  set -g ICON_VCS_TAG               \uF02B     # 
+  set -g ICON_VCS_BOOKMARK          \uF461     # 
+  set -g ICON_VCS_COMMIT            \uE729     # 
   set -g ICON_VCS_BRANCH            \uF418        # \uE0A0 or \uF020
-  set -g ICON_VCS_REMOTE_BRANCH     \uE804" "     #  not displayed, should be branch icon on a book
-  set -g ICON_VCS_DETACHED_BRANCH   \u27A6" "     # ➦
-  set -g ICON_VCS_GIT               \uF1D2" "     #  from nerd-fonts
-  set -g ICON_VCS_HG                \F0DD" "      # Got cut off from Octicons on patching
+  set -g ICON_VCS_REMOTE_BRANCH     \uE804     #  not displayed, should be branch icon on a book
+  set -g ICON_VCS_DETACHED_BRANCH   \u27A6     # ➦
+  set -g ICON_VCS_GIT               \uF1D2     #  from nerd-fonts
+  set -g ICON_VCS_HG                \uF0DD      # Got cut off from Octicons on patching
   set -g ICON_VCS_CLEAN             \uF03A        # 
-  set -g ICON_VCS_PUSH              printf "\uF005 " # bugs out in fish: \uF005 (printf "\uF005")
+  set -g ICON_VCS_PUSH              printf "\uF005" # bugs out in fish: \uF005 (printf "\uF005")
   set -g ICON_VCS_DIRTY             ±             #
 
   set -g ICON_ARROW_UP              \uF03D""      #  ↑
