@@ -44,7 +44,7 @@ function fish_right_prompt
     set PYTHONp (_python_version)                                    #Python version
     set RUBYp   (_ruby_version)                                      #Ruby prompt @ gemset
     set JVMp    (_jvm_version)                                       #Java version
-    echo -n -s "$git_sha$JVMp$NODEp$PYTHONp$RUBYp"                   # -n no newline -s no space separation
+    echo -n -s "$git_sha$NODEp$JVMp$PYTHONp$RUBYp"                   # -n no newline -s no space separation
   end
   echo -n -s (_prompt_user)                                          #display user@host if different from default or SSH
 end
