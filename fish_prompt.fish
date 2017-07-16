@@ -310,16 +310,16 @@ function _icons_initialize
   # Setting everything up for nerd-fonts glyphs
   #echo \uf00a \ue709 \ue791 \ue739 \uF0DD \uF020 \uF01F \uF07B \uF015 \uF00C \uF00B \uF06B \uF06C \uF06E \uF091 \uF02C \uF026 \uF06D \uF0CF \uF03A \uF03D \uF081 \uF02A \uE606 \uE73C      #\uF005 bugs in fish
   set -g ORANGE                     FF8C00        #FF8C00 dark orange, FFA500 orange, another one fa0 o
-  set -g ICON_NODE                  \uE718" "     #  from Devicons or ⬢
-  set -g ICON_RUBY                  \uE791" "     # \uE791 from Devicons; \uF047; \uE739; 💎
-  set -g ICON_PYTHON                \uE73C" "     # \uE606; \uE73C
+  set -g ICON_NODE                  \uE718    #  from Devicons or ⬢
+  set -g ICON_RUBY                  \uE791    # \uE791 from Devicons; \uF047; \uE739; 💎
+  set -g ICON_PYTHON                \uE73C    # \uE606; \uE73C
   #set -g ICON_PERL                  \uE606" "     # \uE606; \uE73C
   set -g ICON_TEST                  \uF091        # 
 
   set -g ICON_VCS_UNTRACKED         \uF4A4" "     # …   #●: there are untracked (new) files
   set -g ICON_VCS_UNMERGED          \uF026" "     #    #═: there are unmerged commits <-- TODO
   set -g ICON_VCS_MODIFIED          \uF459" "     #  <-- TODO
-  set -g ICON_VCS_STAGED            \uF06B" "     # ~  (added) → <-- TODO
+  set -g ICON_VCS_STAGED            \uF457" "     # ~  (added) → <-- TODO
   set -g ICON_VCS_DELETED           \uF458" "     # 
   set -g ICON_VCS_DIFF              \uF440" "     # 
   set -g ICON_VCS_RENAME            \uF45A" "     # 
