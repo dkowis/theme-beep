@@ -270,7 +270,7 @@ function _node_version -d "Get the currently used node version if NVM exists"
   test $node_version; and echo -n -s (_col brgreen)$ICON_NODE(_col green)$node_version(_col_res)
 end
 
-function _jenv_version -d "Get the current java version if jenv exists"
+function _jvm_version -d "Get the current java version if jenv exists"
   set -l jvm_version
   type -q jenv; and set -l jenv_version (jenv version-name)
   test $jvm_version; and echo -n -s (_col brgreen)$ICON_JVM(_col green)$jvm_version(_col_res)
