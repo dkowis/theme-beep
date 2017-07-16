@@ -338,12 +338,12 @@ function _icons_initialize
   set -g ICON_VCS_PUSH              printf "\uF005" # bugs out in fish: \uF005 (printf "\uF005")
   set -g ICON_VCS_DIRTY             ±             #
 
-  set -g ICON_ARROW_UP              \uF03D""      #  ↑
-  set -g ICON_ARROW_DOWN            \uF03F""      #  ↓
-  set -g ICON_OK                    \uF03A        # 
-  set -g ICON_FAIL                  \uF081        # 
-  set -g ICON_STAR                  \uF02A        # 
-  set -g ICON_JOBS                  \u2699" "     # ⚙
+  set -g ICON_ARROW_UP              \uF431""      #  ↑
+  set -g ICON_ARROW_DOWN            \uF433""      #  ↓
+  set -g ICON_OK                    \uF046        # 
+  set -g ICON_FAIL                  \uF2D4        # 
+  set -g ICON_STAR                  \uF005        # 
+  set -g ICON_JOBS                  \uF085" "     # ⚙
   set -g ICON_VIM                   \uE7C5" "     # 
 end
 
