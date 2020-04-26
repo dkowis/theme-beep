@@ -278,10 +278,10 @@ end
 
 function _ruby_version -d "Get RVM or rbenv version and output" #^&1 stderr2stdout, >&2 vice versa, '>' stdout, '2>' stderr
   set -l ruby_ver
-  if which rvm-prompt >/dev/null ^&1
+  if which rvm-prompt >/dev/null 2>&1
     set ruby_ver (rvm-prompt i v g)
   else
-    if which rbenv >/dev/null ^&1
+    if which rbenv >/dev/null 2>&1
       set ruby_ver (rbenv version-name)
     end
   end
@@ -307,7 +307,7 @@ end
 
 function _python_version -d "Get python version if pyenv is installed"
   set -l python_version
-  if which pyenv >/dev/null ^&1
+  if which pyenv >/dev/null 2>&1
     set python_version (pyenv version-name)
   end
   test $python_version; and echo -n -s (_col brblue)$ICON_PYTHON(_col green)$python_version(_col_res)
