@@ -33,6 +33,12 @@ $ fisher dkowis/theme-beep
 * Limits path to __two last folders__ for better visibility, with `$HOME` directory abbreviated to `~`
 * Shows hostname on the right prompt when SSH'd
 
+## TODOs
+
+* [ ] Virtualbox vagrant status: https://github.com/oh-my-fish/theme-bobthefish/blob/master/fish_prompt.fish#L322
+* [ ] docker machine name: https://github.com/oh-my-fish/theme-bobthefish/blob/master/fish_prompt.fish#L381
+
+
 ## Screenshot
 
 TODO: make screenshots!
